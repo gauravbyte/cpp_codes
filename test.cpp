@@ -1,5 +1,4 @@
 #include<bits/stdc++.h>
-#include<algorithm>
 using namespace std;
 int findDuplicate(vector < int > & arr) {
   int n = arr.size();
@@ -18,6 +17,7 @@ int main() {
   //push 1000 elements in the vector arr randomly
   for (int i = 0; i < size; i++) {
     arr.push_back(rand() % 1000);
+    cout<<arr[i]<<" ";
   }
   cout << "The duplicate element is " << findDuplicate(arr) << endl;
 }

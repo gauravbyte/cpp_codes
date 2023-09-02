@@ -3,7 +3,7 @@
 #include <vector>
 #include <algorithm>
  
-// using namespace std;
+using namespace std;
 
 std::vector<int> nextGreaterPermutation(std::vector<int> &A) {
     int n = A.size(); // size of the array.

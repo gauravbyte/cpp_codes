@@ -1,0 +1,4 @@
+process launch --stop-at-entry
+process handle SIGSTOP -n true -p true -s false
+expression (void)freopen("input.txt", "r", std::stdin)
+process continue
