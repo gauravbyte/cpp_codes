@@ -5,45 +5,53 @@
       "name": "Launch",
       "type": "lldb",
       "request": "launch",
+      "preLaunchTask": "C/C++: clang++ build active file",
       "program": "${workspaceFolder}/bin/${fileBasenameNoExtension}",
       "stdio": [
         "input.txt",
+        "output.txt",
         "log.txt"
       ]
     },
-    {
-      "name": "(lldb) Attach",
-      "type": "cppdbg",
-      "request": "attach",
-      "program": "enter program name, for example ${workspaceFolder}/a.out",
-      "MIMode": "lldb"
-    },
-    {
-      "name": "(lldb) Launch",
-      "preLaunchTask": "C/C++: clang++ build active file",
-      "type": "cppdbg",
-      "request": "launch",
-      "program": "${fileDirname}/bin/${fileBasenameNoExtension}",
-      "args": [],
-      "stopAtEntry": false,
-      "cwd": "${fileDirname}",
-      "environment": [],
-      "externalConsole": false,
-      "setupCommands": [
-        {
-          "text": "settings set target.input-path ${fileDirname}/input.txt",
-          "ignoreFailures": true
-        }
-      ],
-      "MIMode": "lldb"
-    },
-    {
-      "name": "C/C++ Runner: Debug Session",
-      "type": "lldb",
-      "request": "launch",
-      "args": [],
-      "cwd": "/Users/gaurav/CODES/cpp_codes",
-      "program": "/Users/gaurav/CODES/cpp_codes/build/Debug/outDebug"
-    }
+    // {
+    //   "name": "(lldb) Attach",
+    //   "type": "cppdbg",
+    //   "request": "attach",
+    //   "program": "enter program name, for example ${workspaceFolder}/a.out",
+    //   "MIMode": "lldb"
+    // },
+    // {
+    //   "name": "(lldb) Launch",
+    //   //add default build task c/c++ before launch
+    //   "preLaunchTask": "C/C++: clang++ build active file",
+    //   // "preLaunchTask": "C/C++: clang++ build active file",
+    //   "type": "cppdbg",
+    //   "request": "launch",
+    //   "program": "${fileDirname}/bin/${fileBasenameNoExtension}",
+    //   "args": [],
+    //   "stopAtEntry": false,
+    //   "cwd": "${fileDirname}",
+    //   "environment": [],
+    //   "externalConsole": false,
+    //   "stdio": [
+    //     "input.txt",
+    //     "log.txt"
+    //   ],
+    //   // "setupCommands": [
+    //   //   {
+    //   //     "text": "settings set target.input-path ${fileDirname}/input.txt",
+    //   //     "ignoreFailures": true
+    //   //   }
+    //   // ],
+    //   "MIMode": "lldb"
+    // },
+    // {
+    //   "name": "C/C++ Runner: Debug Session",
+    //   "type": "lldb",
+    //   "request": "launch",
+    //   "args": [],
+    //   "cwd": "/Users/gaurav/CODES/cpp_codes",
+    //   "program": "/Users/gaurav/CODES/cpp_codes/build/Debug/outDebug"
+    // }
   ]
 }

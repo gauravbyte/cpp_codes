@@ -1,6 +1,20 @@
 {
   "files.associations": {
-    "algorithm": "cpp"
+    "algorithm": "cpp",
+    "iosfwd": "cpp",
+    "iostream": "cpp",
+    "vector": "cpp",
+    "queue": "cpp",
+    "ostream": "cpp",
+    "deque": "cpp",
+    "functional": "cpp",
+    "list": "cpp",
+    "map": "cpp",
+    "set": "cpp",
+    "string": "cpp",
+    "unordered_map": "cpp",
+    "unordered_set": "cpp",
+    "stack": "cpp"
   },
   "C_Cpp_Runner.msvcBatchPath": "",
   "C_Cpp_Runner.cCompilerPath": "clang",
@@ -57,5 +71,6 @@
   "C_Cpp_Runner.useUndefinedSanitizer": false,
   "C_Cpp_Runner.useLeakSanitizer": false,
   "C_Cpp_Runner.showCompilationTime": false,
-  "C_Cpp_Runner.useLinkTimeOptimization": false
+  "C_Cpp_Runner.useLinkTimeOptimization": false,
+  "C_Cpp.intelliSenseEngineFallback": "enabled"
 }
