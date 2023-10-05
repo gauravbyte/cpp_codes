@@ -4,7 +4,13 @@ bool dfs(int node,int par, vector<int>adj[],vector<int> &visited,vector<int> &pa
     visited[node]=1;
     parent[node]=par;
     for(auto it:adj[node]){
-        if
+        if(!visited[it]){
+            if(dfs(it,node,adj,visited,parent)) return true;
+        }
+        else if(it != par){
+            stack<int> cycle;
+            cycle.push(node);
+        }
     }
 }
 int main(){
@@ -21,5 +27,5 @@ int main(){
     }
     for(int i=1; i<=n; i++){
     if(!visited[i] && dfs(i,-1,adj,visited,)
-    }
-}
+  
+}  }

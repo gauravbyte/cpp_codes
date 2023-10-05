@@ -1,24 +1,9 @@
 {
     "tasks": [
         {
-            "type": "process",
-            "command": "/usr/bin/env",
-            "args": [
-                "CC=clang",
-                "CFLAGS=-g -Wall",
-                "make",
-                "${fileBasenameNoExtension}"
-            ],
-            "options": {
-                "cwd": "${fileDirname}"
-            },
-            "group": "build",
-            "label": "makelldb: selected file"
-        },
-        {
             "type": "cppbuild",
-            "label": "C/C++: clang++ build active file",
-            "command": "/usr/bin/clang++",
+            "label": "C/C++: g++ build active file",
+            "command": "/usr/bin/g++",
             "args": [
                 "-fcolor-diagnostics",
                 "-fansi-escape-codes",
@@ -28,11 +13,6 @@
                 "-o",
                 "${fileDirname}/bin/${fileBasenameNoExtension}"
             ],
-            "presentation": {
-                "echo": true,
-                "reveal": "always",
-                "panel": "shared"
-            },
             "options": {
                 "cwd": "${fileDirname}"
             },
@@ -43,8 +23,61 @@
                 "kind": "build",
                 "isDefault": true
             },
-            "detail": "compiler: /usr/bin/clang++"
+            "detail": "compiler: /usr/bin/g++"
         }
     ],
     "version": "2.0.0"
 }
+
+
+// {
+//     "tasks": [
+//         {
+//             "type": "process",
+//             "command": "/usr/bin/env",
+//             "args": [
+//                 "CC=clang",
+//                 "CFLAGS=-g -Wall",
+//                 "make",
+//                 "-std=c++14",
+//                 "${fileBasenameNoExtension}"
+//             ],
+//             "options": {
+//                 "cwd": "${fileDirname}"
+//             },
+//             "group": "build",
+//             "label": "makelldb: selected file"
+//         },
+//         {
+//             "type": "cppbuild",
+//             "label": "C/C++: clang++ build active file",
+//             "command": "/usr/bin/clang++",
+//             "args": [
+//                 "-fcolor-diagnostics",
+//                 "-fansi-escape-codes",
+//                 "-g",
+//                 "-std=c++14",
+//                 "${file}",
+//                 "-o",
+//                 "${fileDirname}/bin/${fileBasenameNoExtension}"
+//             ],
+//             "presentation": {
+//                 "echo": true,
+//                 "reveal": "always",
+//                 "panel": "shared"
+//             },
+//             "options": {
+//                 "cwd": "${fileDirname}"
+//             },
+//             "problemMatcher": [
+//                 "$gcc"
+//             ],
+//             "group": {
+//                 "kind": "build",
+//                 "isDefault": true
+//             },
+//             "detail": "compiler: /usr/bin/clang++"
+//         }
+//     ],
+//     "version": "2.0.0"
+// }

@@ -39,7 +39,7 @@ void dfs(vector<vector<char> > &arr,int r,int c){
     if(r<0 || r>=n || c<0 || c>=m){
         return;
     }
-    if(arr[r][c]=='#'){
+    if(arr[r][c ]=='#'){
         return;
     }
     arr[r][c]='#';
@@ -68,6 +68,7 @@ int main()
             }
         }
     }
-}
+    cout<<count<<endl;
     return 0;
-    cout<<count;
+}
+
