@@ -1,6 +1,7 @@
 {
   "files.associations": {
     "vector": "cpp",
+    "ostream": "cpp",
     "iostream": "cpp",
     "__bit_reference": "cpp",
     "__config": "cpp",
@@ -60,7 +61,6 @@
     "new": "cpp",
     "numbers": "cpp",
     "optional": "cpp",
-    "ostream": "cpp",
     "queue": "cpp",
     "ratio": "cpp",
     "regex": "cpp",

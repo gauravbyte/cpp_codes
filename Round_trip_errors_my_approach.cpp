@@ -19,7 +19,7 @@ Every road is between two different cities, and there is at most one road betwee
 Output
 
 First print an integer k
-: the number of cities on the route. Then print k
+: the number of cities on the rou te. Then print k
  cities in the order they will be visited. You can print any valid solution.
 
 If there are no solutions, print "IMPOSSIBLE".
@@ -82,6 +82,9 @@ int main()
 {
     int m,n;
     cin>>n>>m;
+    // n=5;
+    // m=6;
+
     vector<int> adj[n+1];
     vector<int> vis(n+1,0);
 

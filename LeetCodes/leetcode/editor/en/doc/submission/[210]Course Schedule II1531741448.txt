@@ -1,0 +1,60 @@
+class Solution {
+public:
+    void dfs(vector<vector<int>>&adj,int vertex,vector<bool>&visited,vector<int>&order){
+      if(visited[vertex]){
+        return;
+      }
+      for(auto i:adj[vertex]){
+        if(!visited[i]){
+          visited[i]=true;
+          dfs(adj,i,visited,order);
+        }
+      }
+      order.push_back(vertex);
+      return;
+    }
+    vector<int> findOrder(int numCourses, vector<vector<int>>& prerequisites) {
+        vector<vector<int>> adj(numCourses);
+        vector<int> indegree(numCourses,0);
+
+        vector<int> res;
+        for(int i=0; i<prerequisites.size(); i++){
+          adj[prerequisites[i][1]].push_back(prerequisites[i][0]);
+          indegree[prerequisites[i][0]]++;
+        }
+        queue<int> q;
+        for(int i=0; i<indegree.size(); i++){
+          if(indegree[i]==0){
+            q.push(i);
+          }
+        }
+        vector<bool> visited(numCourses,false);
+        while(!q.empty()){
+          int cur=q.front();
+          visited[cur]=true;
+          q.pop();
+
+          for(auto i: adj[cur]){
+            if(visited[i]){
+              return {};
+            }
+            indegree[i]--;
+            if(indegree[i]==0){
+              q.push(i);
+            }
+          }
+          res.push_back(cur);
+        }
+
+        for(auto a: visited){
+            if(!a) return {};
+        }
+        
+        return res;
+
+
+
+    }
+};
+//runtime:11 ms
+//memory:18 MB

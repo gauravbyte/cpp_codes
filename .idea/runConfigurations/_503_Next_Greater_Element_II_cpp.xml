@@ -1,0 +1,9 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="[503]Next Greater Element II.cpp" type="CppFileRunConfiguration" factoryName="CppFileRunConfiguration" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="cpp_codes" TARGET_NAME="[503]Next Greater Element II.cpp" CONFIG_NAME="[503]Next Greater Element II.cpp">
+    <option name="compilerOptions" value="-std=c++20" />
+    <option name="sourceFile" value="/var/folders/1m/zx45hw0x14b85s75_6pp2gnh0000gn/T/leetcode/editor/en/[503]Next Greater Element II.cpp" />
+    <method v="2">
+      <option name="com.jetbrains.cidr.cpp.runfile.CppFileBuildBeforeRunTaskProvider$BasicBuildBeforeRunTask" enabled="true" />
+    </method>
+  </configuration>
+</component>

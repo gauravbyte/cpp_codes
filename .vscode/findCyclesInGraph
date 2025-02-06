@@ -1,0 +1,22 @@
+class Solution {
+public:
+
+    vector<int> largestCycle(vector<int>& favorite) {
+        vector<int> cycle;
+        vector<int> visited(favorite.size(), 0);
+        for (int i = 0; i < favorite.size(); i++) {
+            if (visited[i] == 0) {
+                vector<int> currentCycle;
+                int current = i;
+                while (visited[current] == 0) {
+                    visited[current] = 1;
+                    currentCycle.push_back(current);
+                    current = favorite[current];
+
+
+    }
+
+    int maximumInvitations(vector<int>& favorite) {
+        
+    }
+};

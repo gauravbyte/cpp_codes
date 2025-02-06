@@ -54,59 +54,61 @@ using namespace std;
 // @lc code=start
 class Solution {
 public:
-    bool f_not(int &i, string s){
-        i+=2;
-        bool ret=f(i,s);
-        i++;
-        return !ret;
-    }
-    bool f_or(int &i, string s){
-        i+=2;
-        bool ret=f(i,s);
-        while (s[i]!=')')
-        {
-            i++;
-            ret|=f(i,s);
+    bool parse_or(string &s, int &i) {
+        i += 2;
+        bool ret = false;
+        ret |= handle(s, i);
+        while (s[i] != ')') {
+            if (s[i] == ',') i++;
+            ret |= handle(s, i);
         }
+        i++; // Move past ')'
         return ret;
     }
-    bool f_and(int &i, string s){
-        i+=2;
-        bool ret=f(i,s);
-        while (s[i]!=')')
-        {
-            i++;
-            ret&=f(i,s);
-        }
-        return ret;
-    }
-    bool f(int &i,string s){
 
-        if(s[i]=='t'){
-            i++;
-            return true;
+    bool parse_and(string &s, int &i) {
+        i += 2;
+        bool ret = true;
+        ret &= handle(s, i);
+        while (s[i] != ')') {
+            if (s[i] == ',') i++;
+            ret &= handle(s, i);
         }
-        if(s[i]=='f'){
+        i++; 
+        return ret;
+    }
+
+    bool parse_not(string &s, int &i) {
+        i += 2;
+        bool ret = !handle(s, i);
+        i++; 
+        return ret;
+    }
+
+    bool handle(string &s, int &i) {
+        if (s[i] == 'f') {
             i++;
             return false;
         }
-        if(s[i]=='&'){
-            return f_and(i,s);
+        if (s[i] == 't') {
+            i++;
+            return true;
         }
-        if(s[i]=='|'){
-            return f_or(i,s);
+        if (s[i] == '&') {
+            return parse_and(s, i);
         }
-        if(s[i]=='!'){
-            return f_not(i,s);
+        if (s[i] == '|') {
+            return parse_or(s, i);
+        }
+        if (s[i] == '!') {
+            return parse_not(s, i);
         }
         return false;
-
     }
+
     bool parseBoolExpr(string s) {
-        int i=0;
-        return f(i,s);
+        int i = 0;
+        return handle(s, i);
     }
 };
-
 // @lc code=end
-
